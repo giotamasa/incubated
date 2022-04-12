@@ -31,7 +31,7 @@
             "type": "object",
             "properties": {
               "boundingBox": {
-                "type": "goejson polygon"
+                "type": "geojson polygon"
               },
               "typeXXX": {
                 "type": "string"
