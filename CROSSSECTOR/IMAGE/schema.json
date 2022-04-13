@@ -36,7 +36,7 @@
             "svg",
             "webp"
           ],
-          "description": "Property. It must be equal to `png or jpg`."
+          "description": "Property. It must be equal to `png, jpg, jpeg, jfif, pjpeg, pjp, svg or webp`."
         },
         "dateCreated": {
           "type": "string",
