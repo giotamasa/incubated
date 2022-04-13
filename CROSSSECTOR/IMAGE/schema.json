@@ -19,10 +19,33 @@
       "properties": {
         "type": {
           "type": "string",
+          "description": "Property. NGSI Entity Type. It must be equal to Image.",
           "enum": [
-            "imageXXX"
+            "Image"
+          ]
+        },
+        "imageType": {
+          "type": "string",
+          "enum": [
+            "png",
+            "jpg",
+            "jpeg",
+            "jfif",
+            "pjpeg",
+            "pjp",
+            "svg",
+            "webp"
           ],
-          "description": "Property. It must be equal to `imageXXX`."
+          "description": "Property. It must be equal to `png or jpg`."
+        },
+        "dateCreated": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Property. Model:'https://schema.org/DateTime'. Reported date time creation corresponding to this observation."
+        },
+        "imageSource": {
+          "type": "string",
+          "description": "Property. Model:'https://schema.org/Text'. URL providing information for the image corresponding to this observation"
         },
         "detectedObject": {
           "type": "array",
@@ -31,9 +54,29 @@
             "type": "object",
             "properties": {
               "boundingBox": {
-                "type": "geojson polygon"
+                "title": "GeoJSON Polygon",
+                "type": "object",
+                "required": [
+                  "type",
+                  "bbox"
+                ],
+                "properties": {
+                  "type": {
+                    "type": "string",
+                    "enum": [
+                      "Polygon"
+                    ]
+                  },
+                  "bbox": {
+                    "type": "array",
+                    "minItems": 4,
+                    "items": {
+                      "type": "number"
+                    }
+                  }
+                }
               },
-              "typeXXX": {
+              "typeOfObject": {
                 "type": "string"
               },
               "probability": {
@@ -48,7 +91,7 @@
       "refCamera": {
         "type": "string",
         "format": "uri",
-        "description": "Relationship. XXX"
+        "description": "Relationship. Image is captured by Camera"
       }
     }
   ],
