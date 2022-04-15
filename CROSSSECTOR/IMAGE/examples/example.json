@@ -4,11 +4,19 @@
   "dateCreated": "2020-12-24T13:00:00Z",
   "imageType": "png",
   "imageSource": "https://drive.google.com/file/d/1eNmgWDvb2R34o03cZ9dPXrtEvsreQzQ4/view?usp=sharing",
-  "isCapturedBy": "urn:ngsi-ld:CameraCCTV:01",
   "detectedObject": [
     {
       "boundingBox": {
         "type": "Polygon",
+        "coordinates": [
+          [
+            [ 25.4464, 41.887688 ],
+            [ 25.855984, 43.386223 ],
+            [ 22.690121, 43.786907 ],
+            [ 22.356091, 42.288685 ],
+            [ 25.4464, 41.887688 ]
+          ]
+        ],
         "bbox": [
           66,
           43,
@@ -18,19 +26,6 @@
       },
       "typeOfObject": "car",
       "probability": 0.8
-    },
-    {
-      "boundingBox": {
-        "type": "Polygon",
-        "bbox": [
-          60,
-          45,
-          378,
-          516
-        ]
-      },
-      "typeOfObject": "person",
-      "probability": 0.6
     }
   ],
   "refCamera": "urn:ngsi-ld:CameraCCTV:01"

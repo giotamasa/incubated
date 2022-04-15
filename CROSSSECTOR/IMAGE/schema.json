@@ -34,9 +34,11 @@
             "pjpeg",
             "pjp",
             "svg",
+            "tiff",
+            "gif",
             "webp"
           ],
-          "description": "Property. It must be equal to `png, jpg, jpeg, jfif, pjpeg, pjp, svg or webp`."
+          "description": "Property. It must be equal to `png, jpg, jpeg, jfif, pjpeg, pjp, svg, tiff, gif or webp`."
         },
         "dateCreated": {
           "type": "string",
@@ -49,7 +51,7 @@
         },
         "detectedObject": {
           "type": "array",
-          "description": "Property. ",
+          "description": "Property. It captures the object detected in the image and some related metadata, i.e., the bounding box inside the image where the object is detected, the typeOfObject (e.g., car, boat, human), and the probability of the detection",
           "items": {
             "type": "object",
             "properties": {
@@ -58,14 +60,29 @@
                 "type": "object",
                 "required": [
                   "type",
-                  "bbox"
+                  "coordinates"
                 ],
+                "description": "Geoproperty. Geojson reference to the item. Polygon",
                 "properties": {
                   "type": {
                     "type": "string",
                     "enum": [
                       "Polygon"
                     ]
+                  },
+                  "coordinates": {
+                    "type": "array",
+                    "items": {
+                      "type": "array",
+                      "minItems": 4,
+                      "items": {
+                        "type": "array",
+                        "minItems": 2,
+                        "items": {
+                          "type": "number"
+                        }
+                      }
+                    }
                   },
                   "bbox": {
                     "type": "array",
