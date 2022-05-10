@@ -1,0 +1,165 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "$schemaVersion": "0.0.1",
+  "$id": "https://smart-data-models.github.io/dataModel.Energy/ThreePhaseAcMeasurement/schema.json",
+  "title": "Smart Data Models - Energy / Three Phase AC Measurement",
+  "description": "An electrical  measurement from a system that uses three phase alternating current.",
+  "modelTags": "",
+  "derivedFrom": "",
+  "license": "https://smart-data-models.github.io/dataModel.Energy/ThreePhaseAcMeasurement/LICENSE.md",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/GSMA-Commons"
+    },
+    {
+      "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/Location-Commons"
+    },
+    {
+      "properties": {
+        "type": {
+          "type": "string",
+          "description": "Property. NGSI Entity Type. It must be equal to Flight.",
+          "enum": [
+            "Flight"
+          ]
+        },
+        "timestamp": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Property. Model:'https://schema.org/DateTime'. Reported date time creation corresponding to this observation."
+        },
+		"capturedVideo": {
+		  "type": "object",
+          "description": "Property.  It contains information for the captured video.",
+          "properties": {
+			"name": {
+			  "type": "string",
+			  "description": "Property. Model:'https://schema.org/Text'. Name corresponding to this video."
+			},
+			"width": {
+			  "type": "string",
+			  "description": "Property. Model:'https://schema.org/Text'. Width corresponding to this video."
+			},
+			"height": {
+			  "type": "string",
+			  "description": "Property. Model:'https://schema.org/Text'. Height corresponding to this video."
+			},
+			"fps": {
+			  "type": "string",
+			  "description": "Property. Model:'https://schema.org/Text'. Frames Per Second corresponding to this video."
+			}
+		  }
+        },
+		"startingPointOfFlight": {
+			"type": "array",
+			"description": "Property. It contains information for the starting point of the flight.",
+			"items": {
+				"gimbalPitch": {
+				  "type": "string",
+				  "description": "Property. Model:'https://schema.org/Text'. Gimbal Pitch corresponding to this point of flight."
+				},
+				"altitude": {
+				  "type": "string",
+				  "description": "Property. Model:'https://schema.org/Text'. Altitude corresponding to this point of flight."
+				},
+				"heading": {
+				  "type": "string",
+				  "description": "Property. Model:'https://schema.org/Text'. Heading corresponding to this point of flight."
+				},
+				"latitude": {
+				  "type": "string",
+				  "description": "Property. Model:'https://schema.org/Text'. Latitude corresponding to this point of flight."
+				},
+				"longitude": {
+				  "type": "string",
+				  "description": "Property. Model:'https://schema.org/Text'. Longitude corresponding to this point of flight."
+				}
+			}
+        },
+        "videoFileFromFlight": {
+          "type": "string",
+          "description": "Property. Model:'https://schema.org/Text'. URL providing video file from the flight corresponding to this observation"
+        },
+		"thumbnailVideoFile": {
+          "type": "string",
+          "description": "Property. Model:'https://schema.org/Text'. URL providing thumbnail video file from the flight corresponding to this observation"
+        },
+		"metadataFileFromFlight": {
+          "type": "string",
+          "description": "Property. Model:'https://schema.org/Text'. URL providing metadata file from the flight corresponding to this observation"
+        },
+		"shapeFileWithFlightInformation": {
+          "type": "string",
+          "description": "Property. Model:'https://schema.org/Text'. URL providing shape file with flight information corresponding to this observation. It must be geojson file"
+        },
+        "detectedObject": {
+          "type": "array",
+          "description": "Property. It captures the object detected in the flight and some related metadata, i.e., the trajectory of the UAV flight, the typeOfObject (e.g., boat, person)",
+          "items": {
+            "type": "object",
+            "properties": {
+              "trajectory": {
+                "type": "array",
+                "description": "Trajectory. Trajectory of the UAV flight",
+                "properties": {
+                  "frame_filename": {
+                    "type": "string"
+                  },
+				  "frame_num": {
+                    "type": "number"
+                  },
+				  "timestamp": {
+                    "type": "string",
+					"format": "date-time",
+					"description": "Property. Model:'https://schema.org/DateTime'. Reported date time creation corresponding to this observation."
+                  },
+				  "confidence": {
+                    "type": "string"
+                  },
+				  "left": {
+                    "type": "string"
+                  },
+				  "top": {
+                    "type": "string"
+                  },
+				  "width": {
+                    "type": "string"
+                  },
+				  "height": {
+                    "type": "string"
+                  },
+				  "gpscoordinates": {
+					"type": "array",
+					"minItems": 2,
+					"items": {
+						"type": "number"
+						}
+                  },
+				  "gpsaltitude": {
+                    "type": "string"
+                  }, 
+                }
+              },
+              "typeOfObject": {
+                "type": "string"
+              },
+              "id": {
+                "type": "number"
+              }
+            }
+          }
+        }
+      },
+      "refUAV": {
+        "type": "string",
+        "format": "uri",
+        "description": "Relationship. Flight is operated by UAV"
+      }
+    }
+  ],
+  "required": [
+    "id",
+    "type"
+  ]
+}

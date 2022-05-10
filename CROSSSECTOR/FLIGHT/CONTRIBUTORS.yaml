@@ -1,0 +1,16 @@
+description: This is a compilation list of all CONTRIBUTORS across different objects (data models) alphabetically ordered. All fields are non mandatory
+contributors:
+- 
+  name: Panagiota
+  surname: Masa
+  mail: gmasa@iti.gr
+  organization: CERTH-ITI. https://www.iti.gr/
+  project: aqua3S. https://aqua3s.eu/
+  comments: Participation in the design of the Flight data model. Ιmplementation of Schema.json file. Produced the graphml illustration.
+- 
+  name: Anastasia
+  surname: Moumtzidou
+  mail: moumtzid@iti.gr
+  organization: CERTH-ITI. https://www.iti.gr/
+  project: aqua3S (https://aqua3s.eu)
+  comments: Initial design of the Flight data model and the related entities. 

@@ -1,0 +1,83 @@
+{
+  "id": "urn:ngsi-ld:Flight:01",
+  "type": "Flight",
+  "timestamp": "2022-04-21T13:00:00Z",
+  "capturedVideo":{
+	"name": "Video_01",
+	"width": "70",
+	"height": "50",
+	"fps": "1400"
+	},
+  "startingPointOfFlight": [
+			{
+				"gimbalPitch": -44,
+				"altitude": 29.8,
+				"longitude": -0.33139154,
+				"heading": 15,
+				"latitude": 39.381752
+			}
+		],
+  "videoFileFromFlight": "https://drive.google.com/file/d/1eNmgWDvb2R34o03cZ9dPXrtEvsreQzQ4/view?usp=sharing",
+  "thumbnailVideoFile": "https://drive.google.com/file/d/1e/view?usp=sharing",
+  "metadataFileFromFlight": "https://drive.google.com/file/d/1e/view?usp=sharing",
+  "shapeFileWithFlightInformation": "https://drive.google.com/file/d/example.geojson",
+  "detectedObject": [{
+			"id": 1,
+			"type": "boat",
+			"trajectory": [{
+				"frame_filename": "",
+				"frame_num": 11,
+				"timestamp": "00:00:11",
+				"confidence": 0.998,
+				"left": 704,
+				"top": 604,
+				"width": 311,
+				"height": 113,
+				"gpscoordinates": [ 25.4464, 41.887688 ],
+				"gpsaltitude": "50"
+			},									
+			{
+				"frame_filename": "",
+				"frame_num": 12,
+				"timestamp": "00:00:12",
+				"confidence": 0.998,
+				"left": 675,
+				"top": 596,
+				"width": 311,
+				"height": 113,
+				"gpscoordinates": [ 25.855984, 43.386223 ],
+				"gpsaltitude": "120"
+			}
+		]},
+		{
+			"id": 2,
+			"type": "person",
+			"trajectory": [{
+				"frame_filename": "",
+				"frame_num": 11,
+				"timestamp": "00:00:20",						
+				"confidence": 0.503,
+				"left": 542,
+				"top": 524,
+				"width": 251,
+				"height": 142,
+				"gpscoordinates": [ 22.690121, 43.786907 ],
+				"gpsaltitude": "250"
+			},					
+			{
+				"frame_filename": "",
+				"frame_num": 21,
+				"timestamp": "00:00:21",						
+				"confidence": 0.503,
+				"left": 534,
+				"top": 537,
+				"width": 251,
+				"height": 142,
+				"gpscoordinates": [ 22.356091, 42.288685 ],
+				"gpsaltitude": "1500"
+			}
+		]
+	}
+	]	,
+  "refUAV": "urn:ngsi-ld:UAV:01"
+}
