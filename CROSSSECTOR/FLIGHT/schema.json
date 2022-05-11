@@ -52,7 +52,7 @@
 		  }
         },
 		"startingPointOfFlight": {
-			"type": "array",
+			"type": "object",
 			"description": "Property. It contains information for the starting point of the flight.",
 			"items": {
 				"gimbalPitch": {
@@ -93,6 +93,10 @@
           "type": "string",
           "description": "Property. Model:'https://schema.org/Text'. URL providing shape file with flight information corresponding to this observation. It must be geojson file"
         },
+		"storageShapeFileFormat": {
+			"type": "string",
+			"description": "Property. Entity's satorage format."
+		},
         "detectedObject": {
           "type": "array",
           "description": "Property. It captures the object detected in the flight and some related metadata, i.e., the trajectory of the UAV flight, the typeOfObject (e.g., boat, person)",
@@ -137,7 +141,7 @@
 						}
                   },
 				  "gpsaltitude": {
-                    "type": "string"
+                    "type": "number"
                   }, 
                 }
               },

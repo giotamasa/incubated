@@ -8,19 +8,18 @@
 	"height": "50",
 	"fps": "1400"
 	},
-  "startingPointOfFlight": [
-			{
-				"gimbalPitch": -44,
-				"altitude": 29.8,
-				"longitude": -0.33139154,
-				"heading": 15,
-				"latitude": 39.381752
-			}
-		],
+  "startingPointOfFlight": {
+	  "gimbalPitch": -44,
+	  "altitude": 29.8,
+	  "longitude": -0.33139154,
+	  "heading": 15,
+	  "latitude": 39
+	  },
   "videoFileFromFlight": "https://drive.google.com/file/d/1eNmgWDvb2R34o03cZ9dPXrtEvsreQzQ4/view?usp=sharing",
   "thumbnailVideoFile": "https://drive.google.com/file/d/1e/view?usp=sharing",
-  "metadataFileFromFlight": "https://drive.google.com/file/d/1e/view?usp=sharing",
-  "shapeFileWithFlightInformation": "https://drive.google.com/file/d/example.geojson",
+  "metadataFileFromFlight": "https://drive.google.com/file/data/www/metadata.xml",
+  "shapeFileWithFlightInformation": "https://drive.google.com/file/data/www/example.geojson",
+  "storageShapeFileFormat": "GeoJSON",
   "detectedObject": [{
 			"id": 1,
 			"type": "boat",
@@ -34,7 +33,7 @@
 				"width": 311,
 				"height": 113,
 				"gpscoordinates": [ 25.4464, 41.887688 ],
-				"gpsaltitude": "50"
+				"gpsaltitude": 50
 			},									
 			{
 				"frame_filename": "frame_name12",
@@ -46,7 +45,7 @@
 				"width": 311,
 				"height": 113,
 				"gpscoordinates": [ 25.855984, 43.386223 ],
-				"gpsaltitude": "120"
+				"gpsaltitude": 120
 			}
 		]},
 		{
@@ -62,7 +61,7 @@
 				"width": 251,
 				"height": 142,
 				"gpscoordinates": [ 22.690121, 43.786907 ],
-				"gpsaltitude": "250"
+				"gpsaltitude": 250
 			},					
 			{
 				"frame_filename": "frame_name21",
@@ -74,7 +73,7 @@
 				"width": 251,
 				"height": 142,
 				"gpscoordinates": [ 22.356091, 42.288685 ],
-				"gpsaltitude": "1500"
+				"gpsaltitude": 1500
 			}
 		]
 	}
