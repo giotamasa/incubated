@@ -38,16 +38,16 @@
 			  "description": "Property. Model:'https://schema.org/Text'. Name corresponding to this video."
 			},
 			"width": {
-			  "type": "string",
-			  "description": "Property. Model:'https://schema.org/Text'. Width corresponding to this video."
+			  "type": "number",
+			  "description": "Property. Model:'https://schema.org/Number'. Width corresponding to this video."
 			},
 			"height": {
-			  "type": "string",
-			  "description": "Property. Model:'https://schema.org/Text'. Height corresponding to this video."
+			  "type": "number",
+			  "description": "Property. Model:'https://schema.org/Number'. Height corresponding to this video."
 			},
 			"fps": {
-			  "type": "string",
-			  "description": "Property. Model:'https://schema.org/Text'. Frames Per Second corresponding to this video."
+			  "type": "number",
+			  "description": "Property. Model:'https://schema.org/Number'. Frames Per Second corresponding to this video."
 			}
 		  }
         },
@@ -56,42 +56,42 @@
 			"description": "Property. It contains information for the starting point of the flight.",
 			"items": {
 				"gimbalPitch": {
-				  "type": "string",
-				  "description": "Property. Model:'https://schema.org/Text'. Gimbal Pitch corresponding to this point of flight."
+				  "type": "number",
+				  "description": "Property. Model:'https://schema.org/Number'. Gimbal Pitch corresponding to this point of flight."
 				},
 				"altitude": {
-				  "type": "string",
-				  "description": "Property. Model:'https://schema.org/Text'. Altitude corresponding to this point of flight."
+				  "type": "number",
+				  "description": "Property. Model:'https://schema.org/Number'. Altitude corresponding to this point of flight."
 				},
 				"heading": {
-				  "type": "string",
-				  "description": "Property. Model:'https://schema.org/Text'. Heading corresponding to this point of flight."
+				  "type": "number",
+				  "description": "Property. Model:'https://schema.org/Number'. Heading corresponding to this point of flight."
 				},
 				"latitude": {
-				  "type": "string",
-				  "description": "Property. Model:'https://schema.org/Text'. Latitude corresponding to this point of flight."
+				  "type": "number",
+				  "description": "Property. Model:'https://schema.org/Number'. Latitude corresponding to this point of flight."
 				},
 				"longitude": {
-				  "type": "string",
-				  "description": "Property. Model:'https://schema.org/Text'. Longitude corresponding to this point of flight."
+				  "type": "number",
+				  "description": "Property. Model:'https://schema.org/Number'. Longitude corresponding to this point of flight."
 				}
 			}
         },
         "videoFileFromFlight": {
           "type": "string",
-          "description": "Property. Model:'https://schema.org/Text'. URL providing video file from the flight corresponding to this observation"
+          "description": "Property. Model:'https://schema.org/url'. URL providing video file from the flight corresponding to this observation"
         },
 		"thumbnailVideoFile": {
           "type": "string",
-          "description": "Property. Model:'https://schema.org/Text'. URL providing thumbnail video file from the flight corresponding to this observation"
+          "description": "Property. Model:'https://schema.org/url'. URL providing thumbnail video file from the flight corresponding to this observation"
         },
 		"metadataFileFromFlight": {
           "type": "string",
-          "description": "Property. Model:'https://schema.org/Text'. URL providing metadata file from the flight corresponding to this observation"
+          "description": "Property. Model:'https://schema.org/url'. URL providing metadata file from the flight corresponding to this observation"
         },
 		"shapeFileWithFlightInformation": {
           "type": "string",
-          "description": "Property. Model:'https://schema.org/Text'. URL providing shape file with flight information corresponding to this observation. It must be geojson file"
+          "description": "Property. Model:'https://schema.org/url'. URL providing shape file with flight information corresponding to this observation. It must be geojson file"
         },
 		"storageShapeFileFormat": {
 			"type": "string",
@@ -119,19 +119,24 @@
 					"description": "Property. Model:'https://schema.org/DateTime'. Reported date time creation corresponding to this observation."
                   },
 				  "confidence": {
-                    "type": "string"
+                    "type": "number",
+					"description": "Property. Model:'https://schema.org/Number'. Reported confidence corresponding to this observation."
                   },
 				  "left": {
-                    "type": "string"
+                    "type": "number",
+					"description": "Property. Model:'https://schema.org/Number'. Reported left corresponding to this observation."
                   },
 				  "top": {
-                    "type": "string"
+                    "type": "number",
+					"description": "Property. Model:'https://schema.org/Number'. Reported top corresponding to this observation."
                   },
 				  "width": {
-                    "type": "string"
+                    "type": "number",
+					"description": "Property. Model:'https://schema.org/Number'. Reported width corresponding to this observation."
                   },
 				  "height": {
-                    "type": "string"
+                    "type": "number",
+					"description": "Property. Model:'https://schema.org/Number'. Reported height corresponding to this observation."
                   },
 				  "gpscoordinates": {
 					"type": "array",
@@ -141,7 +146,8 @@
 						}
                   },
 				  "gpsaltitude": {
-                    "type": "number"
+                    "type": "number",
+					"description": "Property. Model:'https://schema.org/Number'. Reported gps altitude corresponding to this observation."
                   }, 
                 }
               },

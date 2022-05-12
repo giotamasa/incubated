@@ -4,9 +4,9 @@
   "timestamp": "2022-04-21T13:00:00Z",
   "capturedVideo":{
 	"name": "Video_01",
-	"width": "70",
-	"height": "50",
-	"fps": "1400"
+	"width": 70,
+	"height": 50,
+	"fps": 1400
 	},
   "startingPointOfFlight": {
 	  "gimbalPitch": -44,
