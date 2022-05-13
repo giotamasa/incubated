@@ -79,33 +79,33 @@
         },
         "videoFileFromFlight": {
           "type": "string",
-          "description": "Property. Model:'https://schema.org/url'. URL providing video file from the flight corresponding to this observation"
+          "description": "Property. Model:'https://schema.org/url'. URL providing video file from the flight corresponding to this observation."
         },
 		"thumbnailVideoFile": {
           "type": "string",
-          "description": "Property. Model:'https://schema.org/url'. URL providing thumbnail video file from the flight corresponding to this observation"
+          "description": "Property. Model:'https://schema.org/url'. URL providing thumbnail video file from the flight corresponding to this observation."
         },
 		"metadataFileFromFlight": {
           "type": "string",
-          "description": "Property. Model:'https://schema.org/url'. URL providing metadata file from the flight corresponding to this observation"
+          "description": "Property. Model:'https://schema.org/url'. URL providing metadata file from the flight corresponding to this observation."
         },
 		"shapeFileWithFlightInformation": {
           "type": "string",
-          "description": "Property. Model:'https://schema.org/url'. URL providing shape file with flight information corresponding to this observation. It must be geojson file"
+          "description": "Property. Model:'https://schema.org/url'. URL providing shape file with flight information (i.e., flight trajectory) corresponding to this observation. The type of file is determined by the property 'storageShapeFileFormat'."
         },
 		"storageShapeFileFormat": {
 			"type": "string",
-			"description": "Property. Entity's satorage format."
+			"description": "Property. Entity's storage format. It can be a geoJSON or geoTiff file."
 		},
         "detectedObject": {
           "type": "array",
-          "description": "Property. It captures the object detected in the flight and some related metadata, i.e., the trajectory of the UAV flight, the typeOfObject (e.g., boat, person)",
+          "description": "Property. It captures the objects detected in the flight and some related metadata, i.e., the trajectory of the object detected during the UAV flight, the typeOfObject (e.g., boat, person), the confidence of the detection, the position of object inside the frame, an estimate of the position of the object in the area by using the flight metadata.",
           "items": {
             "type": "object",
             "properties": {
               "trajectory": {
                 "type": "array",
-                "description": "Trajectory. Trajectory of the UAV flight",
+                "description": "Trajectory. Trajectory of the object detected during the UAV flight",
                 "properties": {
                   "frame_filename": {
                     "type": "string"
@@ -120,39 +120,41 @@
                   },
 				  "confidence": {
                     "type": "number",
-					"description": "Property. Model:'https://schema.org/Number'. Reported confidence corresponding to this observation."
+					"description": "Property. Model:'https://schema.org/Number'. Reported confidence corresponding to the identification of the object in the specific frame."
                   },
 				  "left": {
                     "type": "number",
-					"description": "Property. Model:'https://schema.org/Number'. Reported left corresponding to this observation."
+					"description": "Property. Model:'https://schema.org/Number'. It captures the left pixel of the bounding box containing the object detected in the specific frame of the video."
                   },
 				  "top": {
                     "type": "number",
-					"description": "Property. Model:'https://schema.org/Number'. Reported top corresponding to this observation."
+					"description": "Property. Model:'https://schema.org/Number'. It captures the top pixel of the bounding box containing the object detected in the specific frame of the video."
                   },
 				  "width": {
                     "type": "number",
-					"description": "Property. Model:'https://schema.org/Number'. Reported width corresponding to this observation."
+					"description": "Property. Model:'https://schema.org/Number'. It captures the width of the bounding box containing the object detected in the specific frame of the video."
                   },
 				  "height": {
                     "type": "number",
-					"description": "Property. Model:'https://schema.org/Number'. Reported height corresponding to this observation."
+					"description": "Property. Model:'https://schema.org/Number'. It captures the height of the bounding box containing the object detected in the specific frame of the video."
                   },
 				  "gpscoordinates": {
 					"type": "array",
 					"minItems": 2,
 					"items": {
 						"type": "number"
-						}
+						},
+					"description": "Property. Model:'https://schema.org/Number'. Estimated gps coordinates of the detected objected."
                   },
 				  "gpsaltitude": {
                     "type": "number",
-					"description": "Property. Model:'https://schema.org/Number'. Reported gps altitude corresponding to this observation."
+					"description": "Property. Model:'https://schema.org/Number'. Estimated altitude of the detected objected."
                   }, 
                 }
               },
               "typeOfObject": {
-                "type": "string"
+                "type": "string",
+				"description": "Property. Captures the name of the object detected, e.g., human, car, boat, building."
               },
               "id": {
                 "type": "number"
